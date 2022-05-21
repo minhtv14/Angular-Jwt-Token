@@ -1,0 +1,14 @@
+<form class="form-signin" [formGroup]="form" (ngSubmit)="login()">
+    <div class="container-fluid">
+        <h2 class="form-signin-heading">Login</h2>
+        <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username or password.</div>
+        <br/>
+        <label for="username" class="sr-only">User Name</label>
+        <input type="email" formControlName="username" class="form-control" placeholder="User Name"/>
+        <br/>
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" formControlName="password" class="form-control" placeholder="Password"/>
+        <br/>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </div>
+</form>

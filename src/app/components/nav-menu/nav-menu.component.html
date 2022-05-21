@@ -1,0 +1,38 @@
+<header>
+    <nav class='stroke navbar-expand-sm navbar-toggleable-sm navbar-light bg-
+white border-bottom box-shadow mb-3'>
+        <div class="container">
+            <a class="nav-link text-dark" style="color: 
+black; font-weight: bold; font-size: large;" [routerLink]='["/"]'>Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+                aria-label="Toggle navigation" [attr.aria-expanded]="isExpanded" (click)="toggle()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" [ngClass]='{"show": isExpanded}'>
+                <ul class="navbar-nav flex-grow">
+                    <li class="nav-item" [routerLinkActive]='["link-active"]'>
+                        <a class="nav-link text-dark" [routerLink]='["/addresses"]'>Address Book</a>
+                    </li>
+                    <li *ngIf="!isUserAuthenticated()" class="nav-item" [routerLinkActive]='["link-active"]'>
+                        <a class="nav-link text-dark" [routerLink]='["/register"]'>Register</a>
+                    </li>
+                    <li *ngIf="!isUserAuthenticated()" class="nav-item" [routerLinkActive]='["link-active"]'>
+                        <a class="nav-link text-dark" [routerLink]='["/login"]'>Login</a>
+                    </li>
+                    <li *ngIf="isUserAuthenticated()" class="logout" (click)="logOut()">
+                        <i class="fa fa-sign-out" aria-hidden="true">Logout</i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<footer>
+    <nav class="navbar navbar-light bg-
+white mt-5 fixed-bottom">
+        <div class="navbar-expand m-auto navbar-text">
+            Developed with <i class="fa fa-heart"></i> by <b>Sarathlal
+                Saseendran</b>
+        </div>
+    </nav>
+</footer>
